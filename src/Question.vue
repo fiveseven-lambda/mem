@@ -17,8 +17,9 @@ const correct = ref(false)
     :question="question"
     :question_index="question_index"
     @check="b => {
+      const diff = +b - +correct;
       correct = b;
-      emit('next')
+      emit('next', diff)
     }"
   />
   <SingleChoiceQuestion
@@ -26,14 +27,15 @@ const correct = ref(false)
     :question="question"
     :question_index="question_index"
     @check="b => {
+      const diff = +b - +correct;
       correct = b;
-      emit('next')
+      emit('next', diff)
     }"
   />
 </template>
 
 <style scoped>
 p {
-  background-color: v-bind("correct ? 'white' : 'silver'")
+  background-color: v-bind("correct ? 'white' : 'orange'")
 }
 </style>
