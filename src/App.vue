@@ -22,7 +22,8 @@ function create_multiple(
 
 const antibiotic_mechanism = ['細胞壁合成阻害', 'タンパク質合成阻害', '核酸合成阻害', '葉酸代謝阻害']
 const incubation_periods = ['2〜3時間', '1〜3日', '2〜3週間', '数年']
-const virus_class = ['2本鎖DNA', '1本鎖DNA', '2本鎖RNA', 'プラス鎖RNA', 'マイナス鎖RNA']
+const virus_class = ['2本鎖DNA', '1本鎖DNA', '2本鎖RNA', '1本鎖RNA']
+const parasite_oral_infection = ['豚肉', '牛肉', 'アジ・サバ', 'サケ・マス', 'アユ', 'タニシ・コイ', 'サワガニ', '有機野菜']
 
 const questions = _.shuffle([create_multiple(
   'アミノグリコシド系を全て選べ',
@@ -163,16 +164,52 @@ const questions = _.shuffle([create_multiple(
 }, {
   text: 'インフルエンザウイルスは',
   choices: virus_class,
-  ans: 4,
+  ans: 3,
 }, {
   text: '麻疹ウイルスは',
   choices: virus_class,
-  ans: 4,
+  ans: 3,
 }, create_multiple(
   '先天性トキソプラズマ症の症状',
   ['網膜脈絡炎', '水頭症', '脳内石灰化'], 3,
   [], 0
-)])
+), {
+  text: '有鉤条虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 0
+}, {
+  text: '無鉤条虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 1
+}, {
+  text: 'アニサキスの感染源は',
+  choices: parasite_oral_infection,
+  ans: 2
+}, {
+  text: '日本海裂頭条虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 3
+}, {
+  text: '横川吸虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 4
+}, {
+  text: '肝吸虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 5
+}, {
+  text: '宮崎肺吸虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 6
+}, {
+  text: 'ウェステルマン肺吸虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 6
+}, {
+  text: '回虫の感染源は',
+  choices: parasite_oral_infection,
+  ans: 7
+}])
 
 const number = ref(1)
 const point = ref(0)
